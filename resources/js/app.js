@@ -4,7 +4,11 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+import Multiselect from 'vue-multiselect'
+
+
 require('./bootstrap');
+require('vue-multiselect/dist/vue-multiselect.min.css');
 
 window.Vue = require('vue');
 
@@ -21,6 +25,7 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('card-component', require('./components/Card.vue').default);
+Vue.component('multiselect', Multiselect)
 
 
 Vue.component('menu-container', require('./modules/menu/MenuContainer.vue').default);
