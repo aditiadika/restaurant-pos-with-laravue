@@ -1814,7 +1814,11 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     handleSubmit: function handleSubmit() {
-      console.log('test', this.food);
+      var postData = this.food;
+      postData.restoId = this.restoId;
+      window.axios.post('api/add-menu', postData).then(function (reponse) {
+        console.log(reponse.data);
+      });
     }
   }
 });
@@ -1878,6 +1882,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   created: function created() {
     var _this = this;
+
+    console.log(this.items);
 
     lodash__WEBPACK_IMPORTED_MODULE_0___default.a.forEach(this.items, function (item, key) {
       _this.categories.push(key);

@@ -40,6 +40,7 @@
             }
         },
         created() {
+            console.log(this.items)
             _.forEach(this.items, (item, key) => {
                 this.categories.push(key)
             })

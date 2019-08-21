@@ -35,8 +35,13 @@
         },
         methods: {
             handleSubmit(){
-                console.log('test', this.food)
+                let postData = this.food;
+                postData.restoId = this.restoId;
 
+                window.axios.post('api/add-menu', postData)
+                    .then(reponse => {
+                        console.log(reponse.data)
+                    });
             }
         }
     }
